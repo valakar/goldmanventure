@@ -1,9 +1,9 @@
-# Goldman ventures
+= Goldman ventures
 
 Business site for goldman ventures company
-[Goldmanventure](http://goldmanventure.com/)
+{Goldmanventure}[http://goldmanventure.com/]
 
-## Technology used:
+== Technology used:
   - Ruby on Rails
   - HTML, Haml
   - CSS, Sass, Compass
