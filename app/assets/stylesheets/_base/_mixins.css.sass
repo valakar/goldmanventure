@@ -1,0 +1,94 @@
+@import 'vars'
+=fullsize-section($color-bg: #fff, $padding: 0 0 0 35em, $color: #000)
+  padding: $padding
+  height: 100%
+  overflow: auto
+  background-color: $color-bg
+  overflow-y: hidden
+  color: $color
+
+=article($color: #000, $padding: 0em, $background: none, $p_padding: 0)
+  article
+    background: $background
+    padding: $padding
+    color: $color
+    overflow-y: hidden
+    img
+      //width: 125px
+      //height: 125px
+      display: block
+      margin: 0 auto
+    h2
+      text-align: center
+      font-weight: 900
+      font-size: 2em
+    p
+      text-align: justify
+      padding: $p_padding
+    .icon
+      width: 100px
+=override-nav-active($color-bg: #666)
+  .nav > .active > a,
+  .nav-pills > .active > a,
+  .nav-stacked > .active > a
+    background: none
+=sidebar-changes($color, $color-bg, $second-color:$color)
+  color: $color
+  .second-color
+    color: $second-color
+  li a
+    color: $color
+  .nav li a:focus
+    color: none
+    background: none
+  .nav li.active a,
+  .nav li.active a:hover,
+  .nav li a:hover,
+  .nav > .active > a
+    color: $second-color
+    background: none
+    &:after
+      font-family: "fontgoldman" !important
+      content: 'a'
+      margin-left: 15px
+      vertical-align: middle
+      font-size: 1.5em
+  //.nav li.active, .nav li a:hover
+  //  &:after
+  //    content: ''
+  //    display: block
+  //    position: absolute
+  //    top: 0px
+  //    left: 100%
+  //    border-color: transparent transparent transparent $color!important
+  //    border-style: solid
+  //    border-width: 24px
+
+
+=lines-for-logo($height, $width, $border-pos, $border-prop, $float:left)
+  height: $height
+  width: $width
+  border-#{$border-pos}: $border-prop
+  float: $float
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+=vendor-property($property, $value)
+  @each $vendor in ('-moz-', '-webkit-', '-o-', '-ms-', '')
+    #{$vendor}#{$property}: #{$value}
+
+=vendor-value($property, $value)
+  @each $vendor in ('-moz-', '-webkit-', '-o-', '-ms-', '')
+    #{$property}: #{$vendor}#{$value}
+
+=vendor($property, $value)
+  @each $vendor in ('-moz-', '-webkit-', '-o-', '-ms-', '')
+    #{$vendor}#{$property}: #{$vendor}#{$value}

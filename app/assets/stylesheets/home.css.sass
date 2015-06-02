@@ -1,0 +1,301 @@
+@import '_base/mixins'
+body, html, .row-offcanvas, .content, .top-section
+  height: 100%
+  font-family: "Calibri", Arial, sans-serif!important
+
+#sidebar
+  width: inherit
+  min-width: 30em
+  max-width: 30em
+  background-color: transparent
+  float: left
+  height: 100%
+  position: relative
+  overflow-y: auto
+  overflow-x: hidden
+  .nav li.active, .nav li:hover
+    margin-right: 1em
+  .nav li a
+    padding-left: 3em
+    font-size: 2em
+
+  .logo
+    line-height: 5em
+    //width: 60%
+    padding: 3em 6em
+    div:first-child
+      font-size: 5em
+      font-weight: 900
+    div:last-child
+      font-size: 5em
+      font-weight: 100
+
+.sidebar-main
+  +sidebar-changes($main-section-article-color, $first-section)
+.sidebar-second
+  +sidebar-changes($first-section, $second-section)
+.sidebar-third
+  +sidebar-changes($third-section-article-color, $third-section)
+.sidebar-fourth
+  +sidebar-changes($fourth-section-first-color, $fourth-section-second-color, $fourth-section-second-color)
+
+
+#top-part
+  +fullsize-section($top-section, 0, $goldman-venture-logo)
+#main-part
+  +fullsize-section
+  +article($main-section-article-color, 3em)
+  .navbar-touch a
+    color: $main-section-article-color
+  .navbar-touch li.active a
+    color: #fff
+    background: $main-section-article-color
+  .icon
+    height: 99px
+    widows: 105px
+
+#second-part
+  +fullsize-section($second-section)
+  +article(#fff, 2em, $second-section-article-bg, 0 2em)
+  [class*="col-"]
+    height: 100%
+  .row:nth-child(2)
+    height: 57%
+    margin: 1em 0
+  .row:last-child
+    height: 37%
+    margin: 1em 0
+  article, .picture, .picture img
+    padding: 0.5em
+    height: 100%
+    width: 100%
+  .picture
+    background: $second-section-article-bg
+  .navbar-touch a
+    color: #fff
+  .navbar-touch li.active a
+    color: #fff
+    background: $second-section-article-bg
+
+#third-part
+  +fullsize-section($third-section)
+  +article(#000, 2em, $third-section-article-bg, 0 2em)
+  article
+    height: 85%
+    //box-shadow: 10px 10px 20px -15px black
+    position: relative
+    .actions
+      float: right
+      font-size: 2em
+    h2
+      padding: 0 1em
+      text-align: left
+      font-style: italic
+      font-size: 2em
+      font-weight: 100
+
+  .main-article
+    margin: 5em 0
+  .second-article
+    margin: 5em 3em 5em 0em
+  .images
+    position: absolute
+    bottom: 5%
+    left: 0
+    img
+      height: 100%
+      width: 100%
+  .navbar-touch a
+    color: #fff
+  .navbar-touch li.active a
+    background: #000000
+
+#fourth-part
+  +fullsize-section($fourth-section)
+  +article($fourth-section-second-color, 0, transparent, 0)
+  article p
+    color: #ffffff
+  .navbar-touch a
+    color: #fff
+  .navbar-touch li.active a
+    color: #000
+    background: $fourth-section-second-color
+
+
+#top-part
+  .intro
+    background: transparent
+    height: 100%
+    overflow: hidden
+    +vendor-property(animation, fade 1 ease-in 3.4s)
+    .welcome
+      background: image-url('logo-welcome.png') no-repeat
+      height: image-height("logo-welcome.png")
+      width: image-width("logo-welcome.png")
+      background-size: contain
+      position: fixed
+      left: 50%
+      top: 50%
+      margin-left: image-width("logo-welcome.png") / -2
+      margin-top: image-height("logo-welcome.png") / -2
+      opacity: 0
+      +vendor-property(animation, fade-image 1 ease-in 2.4s)
+
+
+    .top-line
+      +lines-for-logo(35%, 50%, right, 5px $goldman-venture-logo solid)
+      +vendor-property(animation, top-line 1 ease-out 3.4s)
+    .middle-line-1
+      +lines-for-logo(5%, 65%, top, 5px $goldman-venture-logo solid)
+      +vendor-property(animation, middle-line-1 1 ease-out 3.6s)
+    .middle-line-2
+      +lines-for-logo(5%, 65%, bottom, 5px $goldman-venture-logo solid, right)
+      +vendor-property(animation, middle-line-2 1 ease-out 3.6s)
+    .bottom-line
+      +lines-for-logo(35%, 50%, left, 5px $goldman-venture-logo solid, right)
+      +vendor-property(animation, bottom-line 1 ease-out 3.4s)
+    .logo-section
+      width: 60%
+      height: 20%
+      float: left
+      .logo
+        background: image-url('logo-big.png') no-repeat
+        height: 100%
+        width: 100%
+        background-size: contain
+        background-position: right top
+        float: left
+        //left: 50%
+        display: block
+        position: relative
+        //margin-left: image-width("logo-big.png") / -2
+        opacity: 0
+        +vendor-property(animation, move-right .7s ease-out 3s forwards)
+
+    .logo-bc-section
+      width: 40%
+      height: 20%
+      float: left
+      position: relative
+      .logo-bc
+        background: image-url('logo.png') no-repeat
+        height: 50%
+        width: 100%
+        background-size: contain
+        //background-position: left bottom
+        float: left
+        bottom: 0
+        margin-left: -10%
+        //left: 50%
+        //top: 50%
+        display: block
+        position: absolute
+        //margin-left: image-width("logo-big.png") / -2
+        opacity: 0
+        +vendor-property(animation, move-left .7s ease-out 4s forwards)
+
+
+
++keyframes(top-line)
+  0%
+    +transform(translateY(-100%))
+  90%
+    +transform(translateY(-100%))
+  100%
+    +transform(translateY(0))
++keyframes(middle-line-1)
+  0%
+    +transform(translateX(-100%))
+  90%
+    +transform(translateX(-100%))
+  100%
+    +transform(translateX(0))
++keyframes(middle-line-2)
+  0%
+    +transform(translateX(100%))
+  90%
+    +transform(translateX(100%))
+  100%
+    +transform(translateX(0))
++keyframes(bottom-line)
+  0%
+    +transform(translateY(100%))
+  90%
+    +transform(translateY(100%))
+  100%
+    +transform(translateY(0))
++keyframes(move-right)
+  0%
+    background-position: 0
+    opacity: 0
+  100%
+    background-position: right top
+    opacity: 1
++keyframes(move-left)
+  0%
+    background-position: right bottom
+    opacity: 0
+  100%
+    background-position: 0
+    opacity: 1
++keyframes(fade)
+  0%
+    background: $intro-color
+  80%
+    background: $intro-color
+  100%
+    background: transparent
++keyframes(fade-image)
+  0%
+    opacity: 0
+  30%
+    opacity: 1
+  80%
+    opacity: 1
+  100%
+    opacity: 0
+/*
+ * For touch screens
+ * --------------------------------------------------
+
+.touch-only
+  display: none
+
+.navbar-touch
+  background: none
+  border: none
+  .navbar-header
+    text-transform: uppercase
+    a
+      font-size: 2em
+      padding: 1em
+  li
+    a
+      font-size: 1.5em
+      padding: 1.5em 1em
+  .navbar-toggle
+    &:hover
+      background: none
+  .navbar-default, .navbar-collapse,
+  .navbar-default, .navbar-form
+    border: none
+/*
+ * off Canvas sidebar
+ * --------------------------------------------------
+//@media screen and (max-width: 768px)
+//  .row-offcanvas
+//    position: relative
+//    +transition-property(all)
+//    +transition-duration(0.25s)
+//    +transition-timing-function(ease-out)
+//    width: calc(100% + 35em)
+//  .row-offcanvas-left
+//    left: -35em
+//    &.active
+//      left: 0
+//  .sidebar-offcanvas
+//    position: absolute
+//    top: 0
+
+
+

@@ -1,0 +1,12 @@
+#slider1_container{:style => "position: relative; margin: 0 auto;\r\n        top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;"}
+  %div{:style => "cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px;\r\n            height: 500px; overflow: hidden;", :u => "slides"}
+    %div
+      =image_tag 'slider/fullimage1.png', :u => 'image'
+    %div
+      =image_tag 'slider/fullimage2.png', :u => 'image'
+    -#%div
+    -#  =image_tag 'slider/fullimage3.png', :u => 'image'
+    -#%div
+    -#  =image_tag 'slider/fullimage4.png', :u => 'image'
+  :javascript
+    jssor_slider1_starter('slider1_container');

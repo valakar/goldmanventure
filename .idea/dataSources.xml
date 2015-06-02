@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="18000406">
+    <data-source source="LOCAL" name="Rails goldmanventure: development" uuid="3cb09ddb-ccc4-43ba-9845-40f8343ac705">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:goldmanventure_development</jdbc-url>
+      <user-name>goldman_admin</user-name>
+      <user-password>dfdcdfcfdfc4dfdedfdfdfd8dfcfdfe8df9cdf8bdfcbdf92</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails goldmanventure: test" uuid="73b49af0-6798-4b91-9a63-da58406cac30">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:goldmanventure_test</jdbc-url>
+      <user-name>goldman_admin</user-name>
+      <user-password>dfdcdfcfdfc4dfdedfdfdfd8dfcfdfe8df9cdf8bdfcbdf92</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails goldmanventure: production" uuid="caa58ed3-773c-4200-ab14-b1b8194839e6">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:gmmobiz_goldmanventuredb</jdbc-url>
+      <user-name>gmmobiz_goldman_admin</user-name>
+      <user-password>dfdcdfcfdfc4dfdedfdfdfd8dfcfdf8bdf89dfcbdfe9dfce</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
